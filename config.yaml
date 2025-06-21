@@ -1,0 +1,56 @@
+name: montop5
+rollback_on_reorg: false
+unordered_multichain_mode: true
+ 
+contracts:
+  - name: TransparentUpgradeableProxy
+    address: 0x2c9C959516e9AAEdB2C748224a41249202ca8BE7
+    abi_path: ./abis/Magma.json
+    handler: src/handlers.ts
+    events:
+      - event: ContractTransaction(address indexed contract, unit256 blockNumber)
+        event: Contract(bytes32 indexed address, unit256 transactionCount)
+  - name: Monad2048
+    address: 0xe0FA8195AE92b9C473c0c0c12c2D6bCbd245De47
+    abi_path: ./abis/Monad2048.json
+    handler: src/handlers.ts
+    events:
+      - event: ContractTransaction(address indexed contract, unit256 blockNumber)
+        event: Contract(bytes32 indexed address, unit256 transactionCount)
+  - name: WrappedMonad
+    address: 0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701
+    abi_path: ./abis/WrappedMonad.json
+    handler: src/handlers.ts
+    events:
+      - event: ContractTransaction(address indexed contract, unit256 blockNumber)
+        event: Contract(bytes32 indexed address, unit256 transactionCount)
+  - name: CrocSwapDex
+    address: 0x88B96aF200c8a9c35442C8AC6cd3D22695AaE4F0
+    abi_path: ./abis/Ambient.json
+    handler: src/handlers.ts
+    events:
+      - event: ContractTransaction(address indexed contract, unit256 blockNumber)
+        event: Contract(bytes32 indexed address, unit256 transactionCount)
+  - name: MadnessRouter
+    address: 0x64Aff7245EbdAAECAf266852139c67E4D8DBa4de
+    abi_path: ./abis/Madness.json
+    handler: src/handlers.ts
+    events:
+      - event: ContractTransaction(address indexed contract, unit256 blockNumber)
+        event: Contract(bytes32 indexed address, unit256 transactionCount)
+
+networks:
+  - id: 10143
+    start_block: 22109590
+    contracts:
+      - name: TransparentUpgradeableProxy
+        address: 0x2c9C959516e9AAEdB2C748224a41249202ca8BE7
+      - name: Monad2048
+        address: 0xe0FA8195AE92b9C473c0c0c12c2D6bCbd245De47
+      - name: WrappedMonad
+        address: 0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701
+      - name: CrocSwapDex
+        address: 0x88B96aF200c8a9c35442C8AC6cd3D22695AaE4F0
+      - name: MadnessRouter
+        address: 0x64Aff7245EbdAAECAf266852139c67E4D8DBa4de
+        
